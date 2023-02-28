@@ -1,3 +1,6 @@
+ name: Set User in Git
+  shell: "git config --global user.name rocko && git config --global user.email rocko@taco.com"
+
 - name: Clone git repo
   shell: "git clone -c http.sslVerify=false {{ repossh }}"
 
@@ -11,9 +14,6 @@
 
 - name: Commit to git repo
   shell: "cd {{playbook_dir}}/{{reponame}} && git commit -m '.'"
-
-- name: Set User in Git
-  shell: "git config user.name rocko && git config user.email rocko@taco.com"
 
 - name: Push to git repo
   shell: "cd {{playbook_dir}}/{{reponame}} && git push -c http.sslVerify=false"
