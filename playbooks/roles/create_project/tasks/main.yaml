@@ -3,6 +3,12 @@
     src: "{{playbook_dir}}/roles/create_project/files/id_rsa"
     dest: ~/.ssh/
 
+- name: git wrapper
+  copy:
+    dest: "{{ playbook_dir }}/.ssh/ssh"
+    content: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $*"
+    mode: 0700
+
 - name: Set User in Git
   shell: "git config --global user.name rocko && git config --global user.email rocko@taco.com"
 
