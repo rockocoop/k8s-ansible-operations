@@ -16,4 +16,4 @@
   shell: "cd {{playbook_dir}}/{{reponame}} && git commit -m '.'"
 
 - name: Push to git repo
-  shell: "cd {{playbook_dir}}/{{reponame}} && git push -c http.sslVerify=false"
+  shell: "cd {{playbook_dir}}/{{reponame}} && git push"
