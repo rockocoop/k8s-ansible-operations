@@ -1,10 +1,13 @@
+- name: Copy ssh keys
+  copy:
+    src: {{playbook_dir}}/roles/create_project/files/id_rsa
+    dest: ~/.ssh/
+
 - name: Set User in Git
   shell: "git config --global user.name rocko && git config --global user.email rocko@taco.com"
 
 - name: Clone git repo
   shell: "git clone -c http.sslVerify=false {{repossh}}"
-  environment:
-    GIT_SSH: "{{ playbook_dir }}/roles/create_project/files/"
 
 - name: Generate Project Yaml
   template:
@@ -19,5 +22,3 @@
 
 - name: Push to git repo
   shell: "cd {{playbook_dir}}/{{reponame}} && git push {{repossh}}"
-  environment:
-    GIT_SSH: "{{ playbook_dir }}/roles/create_project/files/"
