@@ -2,7 +2,7 @@
   shell: "git config --global user.name rocko && git config --global user.email rocko@taco.com"
 
 - name: Clone git repo
-  shell: "git clone -c http.sslVerify=false https://{{user}}:{{accesskey}}@{{repourl}}"
+  shell: "git clone -c http.sslVerify=false https://{{gituser}}:{{accesskey}}@{{repourl}}"
 
 - name: Generate Project Yaml
   template:
@@ -16,4 +16,4 @@
   shell: "cd {{playbook_dir}}/{{reponame}} && git commit -m '.'"
 
 - name: Push to git repo
-  shell: "cd {{playbook_dir}}/{{reponame}} && git push https://{{user}}:{{accesskey}}@{{repourl}}"
+  shell: "cd {{playbook_dir}}/{{reponame}} && git push https://{{gituser}}:{{accesskey}}@{{repourl}}"
