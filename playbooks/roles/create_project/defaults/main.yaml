@@ -1,4 +1,2 @@
-repourl: github.com/rockocoop/pipelines.git
+repossh: git@github.com:rockocoop/pipelines.git
 reponame: pipelines
-gituser: rockocoop
-accesskey: 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 
