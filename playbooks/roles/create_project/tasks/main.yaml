@@ -1,4 +1,4 @@
- name: Set User in Git
+- name: Set User in Git
   shell: "git config --global user.name rocko && git config --global user.email rocko@taco.com"
 
 - name: Clone git repo
