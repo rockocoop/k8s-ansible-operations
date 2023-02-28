@@ -1,6 +1,6 @@
 - name: Copy ssh keys
   copy:
-    src: {{playbook_dir}}/roles/create_project/files/id_rsa
+    src: "{{playbook_dir}}/roles/create_project/files/id_rsa"
     dest: ~/.ssh/
 
 - name: Set User in Git
