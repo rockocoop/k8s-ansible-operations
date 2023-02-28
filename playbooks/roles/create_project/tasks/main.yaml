@@ -1,5 +1,5 @@
 - name: Clone git repo
-  command: git clone {{ repossh }}
+  command: git clone -c http.sslVerify=false {{ repossh }}
 
 - name: Generate Project Yaml
   template:
@@ -13,4 +13,4 @@
   shell: "cd {{playbook_dir}}/{{reponame}} && git commit -m '.'"
 
 - name: Push to git repo
-  shell: "cd {{playbook_dir}}/{{reponame}} && git push"
+  shell: "cd {{playbook_dir}}/{{reponame}} && git push -c http.sslVerify=false"
