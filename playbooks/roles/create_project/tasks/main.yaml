@@ -1,0 +1,16 @@
+- name: Clone git repo
+  command: git clone {{ repossh }}
+
+- name: Generate Project Yaml
+  template:
+    src: project.yaml
+    dest: "{{playbook_dir}}/{{reponame}}/projects/templates/{{projectname}}.yaml"
+
+- name: Add to git repo
+  shell: "cd {{playbook_dir}}/{{reponame}} && git add --all"
+
+- name: Commit to git repo
+  shell: "cd {{playbook_dir}}/{{reponame}} && git commit -m '.'"
+
+- name: Push to git repo
+  shell: "cd {{playbook_dir}}/{{reponame}} && git push"
