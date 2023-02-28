@@ -1,2 +1,2 @@
-repossh: https://github.com/rockocoop/pipelines.git
+repossh: git@github.com:rockocoop/pipelines.git
 reponame: pipelines
